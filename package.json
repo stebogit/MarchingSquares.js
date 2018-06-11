@@ -1,12 +1,22 @@
 {
   "name": "marchingsquares",
-  "main": "./marchingsquares.js",
   "description": "MarchingSquaresJS - An implementation of the Marching Squares algorithm featuring Isocontour and Isoband computation.",
   "version": "1.2.3",
   "directories": {
-    "example": "example"
+    "example": "./example",
+    "dist": "./dist"
   },
+  "main": "index.js",
+  "browser": "dist/marchingsquares.min.js",
+  "module": "index",
+  "jsnext:main": "index",
+  "files": [
+    "index.js",
+    "dist/marchingsquares.js",
+    "dist/marchingsquares.min.js"
+  ],
   "scripts": {
+    "build": "./node_modules/.bin/rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +32,10 @@
     "isoline"
   ],
   "author": "Ronny Lorenz <ronny@tbi.univie.ac.at>",
-  "license": "AGPL-3.0"
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "rollup": "0.60.1",
+    "rollup-plugin-node-resolve": "3.3.0",
+    "rollup-plugin-uglify": "4.0.0"
+  }
 }
